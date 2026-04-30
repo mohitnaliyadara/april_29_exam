@@ -1,6 +1,7 @@
 import 'package:april_29_exam/values/app_text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
@@ -16,8 +17,12 @@ class CustomTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(15.r),
       onTap: onPressed,
-      child: Text(text, style: textStyle ?? mediumText),
+      child: Padding(
+        padding:  EdgeInsets.all(8.r),
+        child: Text(text, style: textStyle ?? mediumText),
+      ),
     );
   }
 }

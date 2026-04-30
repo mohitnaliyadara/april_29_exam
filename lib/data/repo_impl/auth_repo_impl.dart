@@ -4,6 +4,8 @@ import 'package:april_29_exam/data/model/request/signup_request.dart';
 import 'package:april_29_exam/data/model/response/signup_responce.dart';
 import 'package:april_29_exam/data/repository/auth_repo.dart';
 
+import '../model/request/sign_in_request.dart';
+import '../model/response/sign_in_response.dart';
 import '../remote/auth.dart';
 
 class AuthRepoImpl extends AuthRepo {
@@ -13,6 +15,12 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<BaseResponse<SignupResponse>> signup(SignupRequest request) async {
     final BaseResponse<SignupResponse> response = await authApi.signup(request);
+    return response;
+  }
+
+  @override
+  Future<BaseResponse<SignInResponse>> signin(SignInRequest request) async {
+    final BaseResponse<SignInResponse> response = await authApi.signin(request);
     return response;
   }
 }

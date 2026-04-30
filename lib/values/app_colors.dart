@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors {
   static const Color primaryColor = Color(0xFFD2ED04);
 
@@ -9,11 +11,13 @@ class AppColors {
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color textFiledColor = Color(0xFFE4E5E8);
   static const Color errorColor = Color(0xFFFF0000);
+  static const Color  transparent = Colors.transparent;
 
   // Text color
   static const Color textPrimaryColor = Color(0xFF000000);
   static const Color textSecondaryColor = Color(0xFFA9A9A9);
   static const Color textTertiaryColor = Color(0xFF49657B);
+  static const Color textGreyTeraryColor = Color(0xFFC4C4C4);
 
   // gradient color
 
@@ -23,4 +27,5 @@ class AppColors {
   // border colors
   static const Color textFiledBorderColor = Color(0xFF49657B);
   static const Color dividerColor = Color(0xFF9A9CAD);
+  static const Color borderColor = Color(0xFFA9A9A9);
 }

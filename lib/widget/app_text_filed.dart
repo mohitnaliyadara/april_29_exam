@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class AppTextFiled extends StatelessWidget {
   final InputDecoration? decoration;
@@ -51,6 +52,7 @@ class AppTextFiled extends StatelessWidget {
         autofillHints: autoFillHints,
         onTapOutside: (event) => FocusScope.of(context).unfocus(),
         obscureText: obscureText ?? false,
+
         focusNode: focusNode,
         keyboardType: keyBoardType,
         inputFormatters: inputFormatters,
@@ -69,7 +71,7 @@ class AppTextFiled extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(prefixIcon, height: 24.h, width: 24.w),
+                    SvgPicture.asset(prefixIcon, height: 24.h, width: 24.w),
 
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 15.w),
@@ -88,7 +90,7 @@ class AppTextFiled extends StatelessWidget {
                               style: mediumText.copyWith(fontSize: 14.spMin),
                             ),
                             8.horizontalSpace,
-                            Image.asset(Assets.images.downArrow.path),
+                            Image.asset(Assets.images.icons.downArrow.path),
                           ],
                         ),
                       ),

@@ -76,6 +76,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordFocusNode.dispose();
     _phoneFocusNode.dispose();
     _confirmPasswordFocusNode.dispose();
+    _disposer?.forEach((element) => element.reaction.dispose());
 
     // TODO: implement dispose
     super.dispose();
@@ -128,7 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       }),
     ];
 
-    log(_disposer.toString());
+
   }
 
   @override
@@ -138,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: CustomAppBar(
         leading: CustomIconButton(
           onTap: () {},
-          child: Image.asset(Assets.images.backArrow.path),
+          child: Image.asset(Assets.images.icons.backArrow.path),
         ),
         height: 222.h,
         bottom: Container(
@@ -184,7 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               10.verticalSpace,
               AppTextFiled(
-                prefixIcon: Assets.images.person.path,
+                prefixIcon: Assets.images.icons.person.path,
                 controller: _nameController,
                 autoFocus: true,
                 inputFormatters: [LengthLimitingTextInputFormatter(25)],
@@ -201,7 +202,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               10.verticalSpace,
               AppTextFiled(
-                prefixIcon: Assets.images.email.path,
+                prefixIcon: Assets.images.icons.email.path,
                 controller: _emailController,
                 keyBoardType: TextInputType.emailAddress,
                 inputFormatters: [LengthLimitingTextInputFormatter(40)],
@@ -218,7 +219,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               10.verticalSpace,
               AppTextFiled(
-                prefixIcon: Assets.images.phone.path,
+                prefixIcon: Assets.images.icons.phone.path,
                 controller: _phoneController,
                 showCountryCode: true,
                 keyBoardType: TextInputType.phone,
@@ -240,7 +241,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               10.verticalSpace,
               Observer(
                 builder: (context) => AppTextFiled(
-                  prefixIcon: Assets.images.password.path,
+                  prefixIcon: Assets.images.icons.password.path,
                   controller: _passwordController,
                   keyBoardType: TextInputType.visiblePassword,
                   obscureText: signupStore.visiblePassword,
@@ -271,7 +272,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               10.verticalSpace,
               Observer(
                 builder: (context) => AppTextFiled(
-                  prefixIcon: Assets.images.password.path,
+                  prefixIcon: Assets.images.icons.password.path,
                   controller: _confirmPasswordController,
                   keyBoardType: TextInputType.visiblePassword,
                   obscureText: signupStore.confirmVisiblePassword,

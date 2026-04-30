@@ -1,11 +1,12 @@
 import 'package:april_29_exam/core/api/locator/locator.dart';
-import 'package:april_29_exam/ui/auth/signin/view/sign_in_screen.dart';
-import 'package:april_29_exam/ui/auth/signup/view/sign_up_screen.dart';
+import 'package:april_29_exam/ui/home/coach_profile/view/coach_profile_screen.dart';
+
+import 'package:april_29_exam/ui/home/home/view/home_screen.dart';
 import 'package:april_29_exam/values/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:mobx/mobx.dart';
+
 
 //scaffoldMessengerKey
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         scaffoldMessengerKey: snackbarKey,
         theme: appTheme,
-        home: SignInScreen(),
+        home: CoachProfileScreen(),
       ),
     );
   }

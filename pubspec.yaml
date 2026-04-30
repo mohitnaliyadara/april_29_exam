@@ -38,6 +38,9 @@ dependencies:
   # screen utils
   flutter_screenutil: ^5.9.3
 
+  #images
+  flutter_svg: ^2.2.4
+
   #country picker
   country_picker: ^2.0.27
 
@@ -92,6 +95,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/icons/
+    - assets/images/home/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -15,6 +15,7 @@ class ApiModule {
     //
     // /// register APIs implementations
     locator.registerSingleton(AuthApi(dio));
+
   }
 
   static Future<Dio> setup() async {
