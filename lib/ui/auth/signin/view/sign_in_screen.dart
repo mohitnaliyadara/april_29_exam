@@ -2,6 +2,8 @@ import 'package:april_29_exam/data/model/response/sign_in_response.dart';
 import 'package:april_29_exam/ui/auth/signin/store/signin_store.dart';
 import 'package:april_29_exam/widget/custom_icon_button.dart';
 import 'package:april_29_exam/widget/custom_snackbar.dart';
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -12,6 +14,7 @@ import '../../../../core/api/base_response/base_response.dart';
 import '../../../../core/api/db/app_db.dart';
 import '../../../../data/model/request/sign_in_request.dart';
 import '../../../../generated/assets.dart';
+import '../../../../routes/app_routes.dart';
 import '../../../../values/app_colors.dart';
 import '../../../../values/app_text_style.dart';
 import '../../../../values/validation.dart';
@@ -20,14 +23,15 @@ import '../../../../widget/app_text_filed.dart';
 import '../../../../widget/custom_app_bar.dart';
 import '../../../../widget/custom_text_button.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+@RoutePage()
+class SignInScreenPage extends StatefulWidget {
+  const SignInScreenPage({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignInScreenPage> createState() => _SignInScreenPageState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignInScreenPageState extends State<SignInScreenPage> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
 
@@ -84,6 +88,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
         if (response?.code == "200") {
           showSnackBar(message: response?.message.toString() ?? "");
+          context.router.replaceAll([HomeScreenRoute()]);
+          appDB.isLogin = true;
         }
       }),
 
@@ -91,7 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
         signinStore.isLoading = false;
         if (signinStore.errorMessage != null) {
           showSnackBar(message: message ?? "");
-          appDB.isLogin = true;
+          
         }
       }),
     ];
@@ -192,7 +198,9 @@ class _SignInScreenState extends State<SignInScreen> {
                   10.horizontalSpace,
                   CustomTextButton(
                     text: "Sign up",
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushRoute(SignUpScreenRoute());
+                    },
                     textStyle: semiBoldText.copyWith(fontSize: 15.spMin),
                   ),
                 ],

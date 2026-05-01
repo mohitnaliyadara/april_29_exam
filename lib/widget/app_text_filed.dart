@@ -71,7 +71,7 @@ class AppTextFiled extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    SvgPicture.asset(prefixIcon, height: 24.h, width: 24.w),
+                    Image.asset(prefixIcon, height: 24.h, width: 24.w),
 
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 15.w),

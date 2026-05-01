@@ -9,6 +9,8 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
 
+import '../model/response/coach_details_response.dart';
+
 part 'home.g.dart';
 
 @RestApi()
@@ -17,4 +19,7 @@ abstract class HomeApi {
 
   @GET("/coaches")
   Future<BaseResponse<CoacheDataResponse>> coaches();
+
+  @GET("/coaches/{id}")
+  Future<BaseResponse<CoachDetailsResponse>> coachDetails(@Path("id") int id);
 }

@@ -43,6 +43,9 @@ dependencies:
 
   #country picker
   country_picker: ^2.0.27
+  dotted_border: ^3.1.0
+  dropdown_button2: ^3.1.0
+  auto_route: ^11.1.0
 
   # state management
   mobx: ^2.6.0
@@ -72,6 +75,10 @@ dev_dependencies:
   json_serializable: ^6.13.1
 
   retrofit_generator: ^10.2.5
+
+
+  #routes generator
+  auto_route_generator: ^10.5.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

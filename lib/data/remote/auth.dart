@@ -19,4 +19,6 @@ abstract class AuthApi {
   @POST("/login")
   Future<BaseResponse<SignInResponse>> signin(@Body() SignInRequest request);
 
+
+
 }

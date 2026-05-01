@@ -5,6 +5,8 @@ import 'package:april_29_exam/core/api/db/app_db.dart';
 import 'package:april_29_exam/data/model/request/signup_request.dart';
 import 'package:april_29_exam/data/model/response/signup_responce.dart';
 import 'package:april_29_exam/generated/assets.dart';
+import 'package:april_29_exam/routes/app_routes.dart';
+import 'package:april_29_exam/ui/auth/signin/view/sign_in_screen.dart';
 import 'package:april_29_exam/ui/auth/signup/store/signup_store.dart';
 import 'package:april_29_exam/values/app_colors.dart';
 import 'package:april_29_exam/values/app_text_style.dart';
@@ -15,6 +17,8 @@ import 'package:april_29_exam/widget/app_text_filed.dart';
 import 'package:april_29_exam/widget/custom_app_bar.dart';
 import 'package:april_29_exam/widget/custom_icon_button.dart';
 import 'package:april_29_exam/widget/custom_text_button.dart';
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -22,15 +26,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../widget/custom_snackbar.dart';
-
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+@RoutePage()
+class SignUpScreenPage extends StatefulWidget {
+  const SignUpScreenPage({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<SignUpScreenPage> createState() => _SignUpScreenPageState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenPageState extends State<SignUpScreenPage> {
   late final TextEditingController _nameController;
   late final TextEditingController _emailController;
   late final TextEditingController _phoneController;
@@ -117,6 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
         if (response?.code == "200") {
           showSnackBar(message: response?.message.toString() ?? "");
+          context.router.replaceAll([ HomeScreenRoute()]);
         }
       }),
 
@@ -138,7 +143,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: AppColors.whiteColor,
       appBar: CustomAppBar(
         leading: CustomIconButton(
-          onTap: () {},
+          onTap: () {
+            context.router.pop();
+          },
           child: Image.asset(Assets.images.icons.backArrow.path),
         ),
         height: 222.h,
@@ -348,7 +355,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   10.horizontalSpace,
                   CustomTextButton(
                     text: "Log In",
-                    onPressed: () {},
+                    onPressed: () {
+                      context.router.pop();
+                    },
+
                     textStyle: semiBoldText.copyWith(fontSize: 15.spMin),
                   ),
                 ],

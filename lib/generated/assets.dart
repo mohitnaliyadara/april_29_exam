@@ -56,6 +56,9 @@ class $AssetsHomeGen {
   final SvgGenImage calendar = const SvgGenImage(
     'assets/images/home/calendar.svg',
   );
+  final SvgGenImage chat = const SvgGenImage('assets/images/home/chat.svg');
+  final SvgGenImage check = const SvgGenImage('assets/images/home/check.svg');
+  final SvgGenImage clock = const SvgGenImage('assets/images/home/clock.svg');
   final SvgGenImage coach = const SvgGenImage('assets/images/home/coach.svg');
   final SvgGenImage cricket = const SvgGenImage(
     'assets/images/home/cricket.svg',
@@ -73,7 +76,12 @@ class $AssetsHomeGen {
   final SvgGenImage firstSvg = const SvgGenImage(
     'assets/images/home/first.svg',
   );
+  final SvgGenImage gender = const SvgGenImage('assets/images/home/gender.svg');
+  final SvgGenImage latter = const SvgGenImage('assets/images/home/latter.svg');
   final SvgGenImage like = const SvgGenImage('assets/images/home/like.svg');
+  final SvgGenImage location = const SvgGenImage(
+    'assets/images/home/location.svg',
+  );
   final SvgGenImage message = const SvgGenImage(
     'assets/images/home/message.svg',
   );

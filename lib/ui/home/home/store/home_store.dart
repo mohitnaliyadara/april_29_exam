@@ -36,6 +36,17 @@ abstract class _HomeStore with Store {
   String selectedSport = "Cricket";
 
   @observable
+  String selectedGenders = "Male";
+  @observable
+  String selectedCoachingTypes = "1:1";
+
+  @observable
+  String selectedDistance = "5km";
+
+  @observable
+  String selectedLanguage = "English";
+
+  @observable
   bool isOpen = false;
 
   @observable

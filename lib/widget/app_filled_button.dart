@@ -6,13 +6,13 @@ import '../values/app_colors.dart';
 
 class AppFilledButton extends StatelessWidget {
   final VoidCallback? onPressed;
-  final String text;
-  const AppFilledButton({super.key, this.onPressed, required this.text});
+  final String? text;
+  final Widget? child;
+  const AppFilledButton({super.key, this.onPressed, this.text, this.child});
 
   @override
   Widget build(BuildContext context) {
     return Ink(
-
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         gradient: LinearGradient(
@@ -29,7 +29,7 @@ class AppFilledButton extends StatelessWidget {
           height: 60.h,
           width: double.infinity,
 
-          child: Text(text, style: mediumText),
+          child: child ?? Text(text ?? "", style: mediumText),
         ),
       ),
     );

@@ -154,7 +154,7 @@ Widget customOtherCoachDataChip(Coach coach) {
             image: coach.imageUrl.toString(),
 
             width: 120.w,
-            height: 120,
+            height: 120.h,
           ),
         ),
         Expanded(
